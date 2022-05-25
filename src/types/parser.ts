@@ -3,6 +3,23 @@ export type DOMMessage = {
 };
 
 export type ParserMessageResponse = {
-  headlines: string;
-  title: string;
+  name: string;
+  location?: string;
+  experiences?: ProfileExperience[];
+  education?: ProfileEducation;
+};
+
+type ProfileExperience = {
+  company: string;
+  tenure: string;
+  jobs: {
+    title: string;
+    description: string;
+  };
+};
+
+type ProfileEducation = {
+  name: string;
+  course: string;
+  tenure: string;
 };
