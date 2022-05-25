@@ -80,7 +80,7 @@
           "unnamedComponents": "arrow-function"
         }
       ],
-     "id-length": ["error", {"min": 3, "max": 30 }],
+     "id-length": ["error", {"min": 3, "max": 30, "exceptions": ["$"] }],
      "react/jsx-props-no-spreading": "off",
      "react/require-default-props": 0
     }

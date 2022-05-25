@@ -22,6 +22,7 @@
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "cheerio": "^1.0.0-rc.11",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.31",
     "@types/chrome": "^0.0.188",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
