@@ -14,6 +14,12 @@ class LinkedInParser {
 
     return name;
   }
+
+  getLocation(): ParserMessageResponse["location"] {
+    const location = this.$("div.pb2").children(".text-body-small").text();
+
+    return location;
+  }
 }
 
 export default LinkedInParser;

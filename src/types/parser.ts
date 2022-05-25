@@ -4,7 +4,7 @@ export type DOMMessage = {
 
 export type ParserMessageResponse = {
   name: string;
-  location?: string;
+  location: string;
   experiences?: ProfileExperience;
   education?: ProfileEducation[];
 };
