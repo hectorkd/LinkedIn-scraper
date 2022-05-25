@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Box, Button } from "ui";
 
 type ScrapeButtonProps = {

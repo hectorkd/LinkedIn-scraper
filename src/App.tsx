@@ -4,14 +4,9 @@ import BasicInformation from "components/BasicInformation";
 import { DOMMessage, ParserMessageResponse } from "types";
 import { Typography, Box } from "ui";
 import ScrapeButton from "components/ScrapeButton";
-import educationInitialState from "./constants";
 
 const App = (): JSX.Element => {
   const [name, setName] = useState<ParserMessageResponse["name"]>("");
-  const [location, setLocation] = useState<ParserMessageResponse["location"]>("");
-  const [experienc, setExperience] = useState<ParserMessageResponse["experiences"]>([]);
-  const [education, setEducation] =
-    useState<ParserMessageResponse["education"]>(educationInitialState);
 
   const scrapeProfile = (): void => {
     chrome.tabs &&
