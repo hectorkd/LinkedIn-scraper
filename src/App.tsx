@@ -4,9 +4,13 @@ import BasicInformation from "components/BasicInformation";
 import { DOMMessage, ParserMessageResponse } from "types";
 import { Typography, Box } from "ui";
 import ScrapeButton from "components/ScrapeButton";
+import ExperiencesInformation from "components/ExperiencesInformation";
+import EducationInformation from "components/EducationInformation";
 
 const App = (): JSX.Element => {
   const [name, setName] = useState<ParserMessageResponse["name"]>("");
+  const [location, setLocation] = useState<ParserMessageResponse["location"]>("");
+  const [experiences, setExperiences] = useState<ParserMessageResponse["experiences"]>();
 
   const scrapeProfile = (): void => {
     chrome.tabs &&
@@ -21,6 +25,7 @@ const App = (): JSX.Element => {
             { type: "GET_DOM" } as DOMMessage,
             (response: ParserMessageResponse) => {
               setName(response.name);
+              setLocation(response.location);
             }
           );
         }
@@ -35,7 +40,12 @@ const App = (): JSX.Element => {
         </Typography>
       </Box>
       <ScrapeButton onClick={scrapeProfile}>Grab info</ScrapeButton>
-      <BasicInformation label="Name">{name}</BasicInformation>
+      <Box margin={5}>
+        <BasicInformation label="Name">{name}</BasicInformation>
+        <BasicInformation label="Location">{location}</BasicInformation>
+        <ExperiencesInformation />
+        <EducationInformation />
+      </Box>
     </>
   );
 };
