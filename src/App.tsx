@@ -40,12 +40,12 @@ const App = (): JSX.Element => {
   return (
     <>
       <Box margin={3}>
-        <Typography variant="h6" component="h1">
+        <Typography variant="h6" component="h1" fontWeight={700}>
           LinkedIn profile scraper
         </Typography>
       </Box>
       <ScrapeButton onClick={scrapeProfile}>Grab info</ScrapeButton>
-      <Card sx={{ margin: 2 }}>
+      <Card sx={{ marginY: 2 }}>
         <CardContent>
           <BasicInformation label="Name">{name}</BasicInformation>
           <BasicInformation label="Location">{location}</BasicInformation>

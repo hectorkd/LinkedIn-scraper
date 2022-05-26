@@ -9,7 +9,7 @@ type CompanyInfoProps = {
 
 const CompanyInfo = ({ company }: CompanyInfoProps): JSX.Element => {
   return (
-    <Card sx={{ margin: 2 }}>
+    <Card sx={{ margin: 2 }} variant="outlined">
       <CardContent>
         <Stack direction="row" spacing={2}>
           <Typography fontWeight={600}>Company:</Typography>
@@ -22,8 +22,8 @@ const CompanyInfo = ({ company }: CompanyInfoProps): JSX.Element => {
         {company.jobs.map((job) => {
           return (
             <Box margin={2}>
-              <Typography fontWeight={550}>{job.title}</Typography>
-              <Typography>- {job.description}</Typography>
+              <Typography fontWeight={550}>- {job.title}</Typography>
+              {job.description ? <Typography>{job.description}</Typography> : null}
             </Box>
           );
         })}
