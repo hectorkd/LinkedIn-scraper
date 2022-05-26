@@ -5,11 +5,11 @@ export type DOMMessage = {
 export type ParserMessageResponse = {
   name: string;
   location: string;
-  experiences?: ProfileExperience;
+  experiences: ProfileExperience[];
   education?: ProfileEducation[];
 };
 
-type ProfileExperience = {
+export type ProfileExperience = {
   company: string;
   tenure: string;
   jobs: {
@@ -18,7 +18,7 @@ type ProfileExperience = {
   }[];
 };
 
-type ProfileEducation = {
+export type ProfileEducation = {
   name: string;
   course: string;
   tenure: string;

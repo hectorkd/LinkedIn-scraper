@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import BasicInformation from "components/BasicInformation";
 import { DOMMessage, ParserMessageResponse } from "types";
-import { Typography, Box } from "ui";
+import { Typography, Box, Card, CardContent } from "ui";
 import ScrapeButton from "components/ScrapeButton";
 import ExperiencesInformation from "components/ExperiencesInformation";
 import EducationInformation from "components/EducationInformation";
@@ -10,8 +10,10 @@ import EducationInformation from "components/EducationInformation";
 const App = (): JSX.Element => {
   const [name, setName] = useState<ParserMessageResponse["name"]>("");
   const [location, setLocation] = useState<ParserMessageResponse["location"]>("");
-  const [experiences, setExperiences] = useState<ParserMessageResponse["experiences"]>();
+  const [experiences, setExperiences] = useState<ParserMessageResponse["experiences"]>([]);
+  const [education, setEducation] = useState<ParserMessageResponse["education"]>([]);
 
+  // should make a hook?
   const scrapeProfile = (): void => {
     chrome.tabs &&
       chrome.tabs.query(
@@ -24,8 +26,11 @@ const App = (): JSX.Element => {
             tabs[0].id || 0,
             { type: "GET_DOM" } as DOMMessage,
             (response: ParserMessageResponse) => {
+              console.log("response.experiences", response.experiences);
+
               setName(response.name);
               setLocation(response.location);
+              setExperiences(response.experiences);
             }
           );
         }
@@ -40,12 +45,14 @@ const App = (): JSX.Element => {
         </Typography>
       </Box>
       <ScrapeButton onClick={scrapeProfile}>Grab info</ScrapeButton>
-      <Box margin={5}>
-        <BasicInformation label="Name">{name}</BasicInformation>
-        <BasicInformation label="Location">{location}</BasicInformation>
-        <ExperiencesInformation />
-        <EducationInformation />
-      </Box>
+      <Card sx={{ margin: 2 }}>
+        <CardContent>
+          <BasicInformation label="Name">{name}</BasicInformation>
+          <BasicInformation label="Location">{location}</BasicInformation>
+          <ExperiencesInformation experiences={experiences} />
+          <EducationInformation />
+        </CardContent>
+      </Card>
     </>
   );
 };
