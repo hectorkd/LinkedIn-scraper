@@ -1,6 +1,6 @@
 import * as cheerio from "cheerio";
 
-import { ParserMessageResponse, ProfileExperience } from "types";
+import { ParserMessageResponse, ProfileEducation, ProfileExperience } from "types";
 
 class LinkedInParser {
   private $: cheerio.Root;
@@ -32,6 +32,31 @@ class LinkedInParser {
     });
 
     return companies.get();
+  }
+
+  getEducation(): ParserMessageResponse["education"] {
+    const education = this.getLiList("education");
+
+    const courses = education
+      .map((_index, element): ProfileEducation => {
+        // const name = this.$(".pvs-entity", element)
+        //   .children()
+        //   .eq(1)
+        //   .children(".display-flex")
+        //   .children(".display-flex")
+        //   .children(".display-flex")
+        //   .children()
+        //   .children()
+        //   .eq(1)
+        //   .text();
+        const name = this.getCourseDetails(element, 0);
+        const course = this.getCourseDetails(element, 1);
+        const time = this.getCourseDetails(element, 2);
+        return { name, course, time };
+      })
+      .get();
+
+    return courses;
   }
 
   private getPromotionDetailsElement(experience: cheerio.Element): cheerio.Cheerio {
@@ -163,6 +188,18 @@ class LinkedInParser {
       .children("span.visually-hidden")
       .text();
     return { company, tenure, jobs: [{ title, description }] };
+  }
+
+  private getCourseDetails(element: cheerio.Element, index: number): string {
+    return this.$(".pvs-entity", element)
+      .children(".display-flex")
+      .find("a.optional-action-target-wrapper")
+      .first()
+      .children()
+      .eq(index)
+      .find(".visually-hidden")
+      .first()
+      .text();
   }
 }
 

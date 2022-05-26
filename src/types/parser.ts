@@ -6,7 +6,7 @@ export type ParserMessageResponse = {
   name: string;
   location: string;
   experiences: ProfileExperience[];
-  education?: ProfileEducation[];
+  education: ProfileEducation[];
 };
 
 export type ProfileExperience = {
@@ -21,5 +21,5 @@ export type ProfileExperience = {
 export type ProfileEducation = {
   name: string;
   course: string;
-  tenure: string;
+  time: string;
 };

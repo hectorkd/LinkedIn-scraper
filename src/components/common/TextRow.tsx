@@ -10,7 +10,7 @@ type BasicInformationProps = {
 const BasicInformation = ({ children, label }: BasicInformationProps): JSX.Element => {
   return (
     <Stack direction="row" spacing={2}>
-      <Typography fontWeight={600}>{label}:</Typography>
+      <Typography fontWeight={600}>{label}</Typography>
       <Typography>{children}</Typography>
     </Stack>
   );

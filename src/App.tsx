@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import BasicInformation from "components/BasicInformation";
+import BasicInformation from "components/common/TextRow";
 import { DOMMessage, ParserMessageResponse } from "types";
 import { Typography, Box, Card, CardContent } from "ui";
 import ScrapeButton from "components/ScrapeButton";
@@ -26,11 +26,10 @@ const App = (): JSX.Element => {
             tabs[0].id || 0,
             { type: "GET_DOM" } as DOMMessage,
             (response: ParserMessageResponse) => {
-              console.log("response.experiences", response.experiences);
-
               setName(response.name);
               setLocation(response.location);
               setExperiences(response.experiences);
+              setEducation(response.education);
             }
           );
         }
@@ -50,7 +49,7 @@ const App = (): JSX.Element => {
           <BasicInformation label="Name">{name}</BasicInformation>
           <BasicInformation label="Location">{location}</BasicInformation>
           <ExperiencesInformation experiences={experiences} />
-          <EducationInformation />
+          <EducationInformation education={education} />
         </CardContent>
       </Card>
     </>

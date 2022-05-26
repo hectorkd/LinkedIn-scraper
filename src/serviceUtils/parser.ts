@@ -11,7 +11,8 @@ const extensionListener = (
   const response: ParserMessageResponse = {
     name: linkedInParser.getName(),
     location: linkedInParser.getLocation(),
-    experiences: linkedInParser.getExperience()
+    experiences: linkedInParser.getExperience(),
+    education: linkedInParser.getEducation()
   };
 
   sendResponse(response);
