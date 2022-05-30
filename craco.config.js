@@ -8,7 +8,7 @@ module.exports = {
             env === "development" && require.resolve("react-dev-utils/webpackHotDevClient"),
             paths.appIndexJs
           ].filter(Boolean),
-          content: "./src/serviceUtils/parser.ts"
+          content: "./src/serviceUtils/extensionListener.ts"
         },
         output: {
           ...webpackConfig.output,
