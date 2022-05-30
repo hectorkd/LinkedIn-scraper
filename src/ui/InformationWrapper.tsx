@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+
 import { Box, Typography } from "ui";
 
 type InformationWrapperProps = {
