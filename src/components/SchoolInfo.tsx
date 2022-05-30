@@ -1,8 +1,7 @@
 import React from "react";
 
 import { ProfileEducation } from "types";
-import { Card, CardContent } from "ui";
-import TextRow from "./common/TextRow";
+import { Card, CardContent, Typography } from "ui";
 
 type SchoolInfoProps = {
   school: ProfileEducation;
@@ -12,9 +11,11 @@ const SchoolInfo: React.FC<SchoolInfoProps> = ({ school }: SchoolInfoProps): JSX
   return (
     <Card sx={{ margin: 2 }} variant="outlined">
       <CardContent>
-        <TextRow label="School:">{school.name}</TextRow>
-        <TextRow label="Course:">{school.course}</TextRow>
-        <TextRow label="Date:">{school.time}</TextRow>
+        <Typography component="h1" fontWeight={600}>
+          {school.name}
+        </Typography>
+        <Typography>{school.course}</Typography>
+        <Typography>{school.time}</Typography>
       </CardContent>
     </Card>
   );

@@ -2,7 +2,6 @@ import React from "react";
 
 import { ProfileExperience } from "types";
 import { Box, Typography, Card, CardContent } from "ui";
-import TextRow from "./common/TextRow";
 
 type CompanyInfoProps = {
   company: ProfileExperience;
@@ -12,8 +11,10 @@ const CompanyInfo = ({ company }: CompanyInfoProps): JSX.Element => {
   return (
     <Card sx={{ margin: 2 }} variant="outlined">
       <CardContent>
-        <TextRow label="Company:">{company.company}</TextRow>
-        <TextRow label="Tenure:">{company.tenure}</TextRow>
+        <Typography component="h1" fontWeight={600}>
+          {company.company}
+        </Typography>
+        <Typography>{company.tenure}</Typography>
         {company.jobs.map((job) => {
           return (
             <Box margin={2}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import BasicInformation from "components/common/TextRow";
+import TextRow from "components/common/TextRow";
 import { DOMMessage, ParserMessageResponse } from "types";
 import { Typography, Box, Card, CardContent } from "ui";
 import ScrapeButton from "components/ScrapeButton";
@@ -46,8 +46,8 @@ const App = (): JSX.Element => {
       <ScrapeButton onClick={scrapeProfile}>Grab info</ScrapeButton>
       <Card sx={{ marginY: 2 }}>
         <CardContent>
-          <BasicInformation label="Name">{name}</BasicInformation>
-          <BasicInformation label="Location">{location}</BasicInformation>
+          <TextRow label="Name:">{name}</TextRow>
+          <TextRow label="Location:">{location}</TextRow>
           <ExperiencesInformation experiences={experiences} />
           <EducationInformation education={education} />
         </CardContent>
