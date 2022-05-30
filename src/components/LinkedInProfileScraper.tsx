@@ -1,8 +1,7 @@
 import React, { useCallback, useState } from "react";
 
 import { DOMMessage, ParserMessageResponse } from "types";
-import { Typography, Box, Card, CardContent, TextRow } from "ui";
-import ScrapeButton from "components/ScrapeButton";
+import { Typography, Box, Card, CardContent, TextRow, ScrapeButton } from "ui";
 import ExperiencesInformation from "components/ExperiencesInformation";
 import EducationInformation from "components/EducationInformation";
 

@@ -39,16 +39,6 @@ class LinkedInParser {
 
     const courses = education
       .map((_index, element): ProfileEducation => {
-        // const name = this.$(".pvs-entity", element)
-        //   .children()
-        //   .eq(1)
-        //   .children(".display-flex")
-        //   .children(".display-flex")
-        //   .children(".display-flex")
-        //   .children()
-        //   .children()
-        //   .eq(1)
-        //   .text();
         const name = this.getCourseDetails(element, 0);
         const course = this.getCourseDetails(element, 1);
         const time = this.getCourseDetails(element, 2);
