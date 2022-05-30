@@ -2,12 +2,12 @@ import React from "react";
 
 import { Stack, Typography } from "ui";
 
-type BasicInformationProps = {
+type TextRowProps = {
   children: string;
   label: string;
 };
 
-const BasicInformation = ({ children, label }: BasicInformationProps): JSX.Element => {
+const TextRow = ({ children, label }: TextRowProps): JSX.Element => {
   return (
     <Stack direction="row" spacing={2}>
       <Typography fontWeight={600}>{label}</Typography>
@@ -16,4 +16,4 @@ const BasicInformation = ({ children, label }: BasicInformationProps): JSX.Eleme
   );
 };
 
-export default BasicInformation;
+export default TextRow;

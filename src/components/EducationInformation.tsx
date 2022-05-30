@@ -1,8 +1,8 @@
 import React from "react";
 
 import { ParserMessageResponse } from "types";
-import { Box, Typography } from "ui";
-import SchoolInfo from "./SchoolInfo";
+import { InformationWrapper } from "ui";
+import SchoolInfo from "../ui/SchoolInfo";
 
 type EducationInformationProps = {
   education: ParserMessageResponse["education"];
@@ -10,12 +10,11 @@ type EducationInformationProps = {
 
 const EducationInformation = ({ education }: EducationInformationProps): JSX.Element => {
   return (
-    <Box>
-      <Typography fontWeight={600}>Experience:</Typography>
+    <InformationWrapper label="Education:">
       {education.map((school) => (
         <SchoolInfo school={school} />
       ))}
-    </Box>
+    </InformationWrapper>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from "react";
 
 import { ParserMessageResponse } from "types";
-import { Box, Typography } from "ui";
-import CompanyInfo from "./CompanyInfo";
+import { InformationWrapper } from "ui";
+import CompanyInfo from "../ui/CompanyInfo";
 
 type ExperiencesInformationProps = {
   experiences: ParserMessageResponse["experiences"];
@@ -10,12 +10,11 @@ type ExperiencesInformationProps = {
 
 const ExperiencesInformation = ({ experiences }: ExperiencesInformationProps): JSX.Element => {
   return (
-    <Box>
-      <Typography fontWeight={600}>Experience:</Typography>
+    <InformationWrapper label="Experience:">
       {experiences.map((experience) => (
         <CompanyInfo company={experience} />
       ))}
-    </Box>
+    </InformationWrapper>
   );
 };
 
