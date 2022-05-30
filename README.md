@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Prologue tech test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-## Available Scripts
+### `npm install`
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run this from the root folder on the project to install all required dependencies
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run this from the root folder to build the app for production to the `build` folder.\
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Loading the extension into your browser
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Visit chrome://extensions/ on your Chrome browser and enable the developer mode toggle:
 
-### `npm run eject`
+- Then, click Load unpacked and select the build folder for this project. Your extension is now loaded, and it’s listed on the extensions page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- In addition, a new button should appear on your extensions toolbar. If you click on it, you will see the React demo application as a pop-up.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to use
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Go to any linkedIn profle.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Click on the extension in your extensions toolbar.
 
-## Learn More
+- Click the 'Grab Info' button.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+There you go. The linkedIn profile information should be displayed on the extension.
