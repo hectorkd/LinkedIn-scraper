@@ -1,7 +1,9 @@
-const educationInitialState = {
+export const educationInitialState = {
   name: "None found",
   course: "None found",
   tenure: "None found"
 };
 
-export default educationInitialState;
+export enum DomMessage {
+  SCRAPE_PROFILE
+}

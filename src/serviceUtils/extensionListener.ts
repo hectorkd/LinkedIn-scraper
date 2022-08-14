@@ -1,8 +1,8 @@
-import { DOMMessage, ParserMessageResponse } from "../types";
+import { DomMessageType, ParserMessageResponse } from "../types";
 import LinkedInParser from "./scraper";
 
 const extensionListener = (
-  _msg: DOMMessage,
+  _msg: DomMessageType,
   _sender: chrome.runtime.MessageSender,
   sendResponse: (response: ParserMessageResponse) => void
 ): void => {

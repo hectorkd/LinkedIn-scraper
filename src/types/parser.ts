@@ -1,5 +1,7 @@
-export type DOMMessage = {
-  type: "GET_DOM";
+import { DomMessage } from "../constants";
+
+export type DomMessageType = {
+  type: DomMessage;
 };
 
 export type ParserMessageResponse = {
@@ -22,4 +24,9 @@ export type ProfileEducation = {
   name: string;
   course: string;
   time: string;
+};
+
+export type LinkedInScraperHook = {
+  response: ParserMessageResponse;
+  handleScrapeProfile: () => void;
 };
